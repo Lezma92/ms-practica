@@ -1,0 +1,8 @@
+server:
+  servlet:
+    context-path: /ms-practica/api/v1
+  port: 8080
+
+spring:
+  application:
+    name: ms-practica
