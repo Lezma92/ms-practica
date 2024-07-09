@@ -19,14 +19,14 @@ public class FoliosController {
 
     @GetMapping("/gethash")
     public Map<String, Integer> getHashFolio(@RequestParam String folio) {
-        
+        LOGGER.info("Solicitud recibida: {}", folio);
+        LOGGER.info("Servicio iniciando digestion...");
         String fechaHora = new SimpleDateFormat("ddMMyyHHmmss").format(new Date());
         String cadenaConcatenada = folio + fechaHora;
         int hash = cadenaConcatenada.hashCode();
-
         Map<String, Integer> response = new HashMap<>();
         response.put("hash", hash);
-
+        LOGGER.info("Respuesta: {}", response.get("hash"));
         return response;
     }
 }
